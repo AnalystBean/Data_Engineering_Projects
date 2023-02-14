@@ -20,14 +20,12 @@ scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# Modeling
-# - Train a logistic regression model
+
 model = LogisticRegression(solver='lbfgs')
 model.fit(X_train, y_train)
 
-# Evaluation
-# - Make predictions on the test set
+
 y_pred = model.predict(X_test)
 
-# - Evaluate the model performance
+
 print(classification_report(y_test, y_pred))
